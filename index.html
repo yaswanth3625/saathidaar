@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saathidar - Peer-to-Peer Co-op</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f3f4f6;
+      color: #1f2937;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #f97316, #14b8a6);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Section */
+    .main-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .main-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+
+    .main-section p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: #4b5563;
+    }
+
+    /* Phone Container */
+    .phone-container {
+      position: relative;
+      width: 320px;
+      height: 640px;
+      background-color: #1f2937;
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      margin: 0 auto 2rem;
+    }
+
+    .app-screen {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .app-header {
+      background: linear-gradient(to right, #f97316, #14b8a6);
+      padding: 16px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .app-header h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .app-content {
+      padding: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 12px;
+    }
+
+    .member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .member img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 12px;
+      object-fit: cover;
+    }
+
+    .member-info {
+      flex: 1;
+    }
+
+    .member-name {
+      font-size: 16px;
+      color: #1f2937;
+      margin: 0;
+    }
+
+    .member-status {
+      font-size: 14px;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    .shopping-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .shopping-item-name {
+      font-size: 16px;
+      color: #1f2937;
+    }
+
+    .shopping-item-quantity {
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .phone-container::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 4px solid #111827;
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    /* Project Link Box */
+    .project-link-box {
+      background-color: #ffffff;
+      border: 2px solid #f97316;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-link-box a {
+      color: #14b8a6;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project-link-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1f2937;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+      }
+
+      .main-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .main-section p {
+        font-size: 1rem;
+      }
+
+      .phone-container {
+        width: 280px;
+        height: 560px;
+      }
+
+      .project-link-box {
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Saathidar</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#app">App</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="main-section">
+    <h2>Welcome to Saathidar</h2>
+    <p>A peer-to-peer co-op platform empowering communities through collaboration and trust. Join vendors in Hyderabad and beyond to share resources and thrive together.</p>
+    <div class="phone-container">
+      <div class="app-screen">
+        <div class="app-header">
+          <h3>Ameerpet Foodies Circle</h3>
+        </div>
+        <div class="app-content">
+          <h4 class="section-title">Members</h4>
+          <div id="member-list"></div>
+          <h4 class="section-title">Shared Shopping List</h4>
+          <div id="shopping-list"></div>
+        </div>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <a href="https://saathidar.example.com" target="_blank">Click here for real project</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Saathidar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Data for members and shopping list
+    const members = [
+      { name: "Ravi Kumar", photo: "https://via.placeholder.com/40", status: "Paid ✅" },
+      { name: "Anita Sharma", photo: "https://via.placeholder.com/40", status: "Pending ⏳" },
+      { name: "Suresh Reddy", photo: "https://via.placeholder.com/40", status: "Paid ✅" },
+      { name: "Priya Patel", photo: "https://via.placeholder.com/40", status: "Paid ✅" },
+      { name: "Vikram Singh", photo: "https://via.placeholder.com/40", status: "Pending ⏳" },
+    ];
+
+    const shoppingList = [
+      { item: "Onions", quantity: "70kg total" },
+      { item: "Tomatoes", quantity: "50kg total" },
+      { item: "Potatoes", quantity: "80kg total" },
+    ];
+
+    // Render members
+    const memberList = document.getElementById('member-list');
+    members.forEach(member => {
+      const memberDiv = document.createElement('div');
+      memberDiv.className = 'member';
+      memberDiv.innerHTML = `
+        <img src="${member.photo}" alt="${member.name}">
+        <div class="member-info">
+          <p class="member-name">${member.name}</p>
+          <p class="member-status">${member.status}</p>
+        </div>
+      `;
+      memberList.appendChild(memberDiv);
+    });
+
+    // Render shopping list
+    const shoppingListDiv = document.getElementById('shopping-list');
+    shoppingList.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'shopping-item';
+      itemDiv.innerHTML = `
+        <span class="shopping-item-name">${item.item}</span>
+        <span class="shopping-item-quantity">${item.quantity}</span>
+      `;
+      shoppingListDiv.appendChild(itemDiv);
+    });
+  </script>
+</body>
+</html>
